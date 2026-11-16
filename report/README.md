@@ -13,37 +13,37 @@
 
 我在自己的 GitHub 账号下创建了 `my-docs` 仓库，并将可见性设为 Public。使用个人仓库可以让源码、提交记录、Actions 日志和 Pages 网站互相对应，也便于老师直接核验。
 
-[!\[个人公开仓库](img/1.png)](img/1.png)
+[![个人公开仓库](img/1.png)](img/1.png)
 
 ### 2.2 项目结构与 MkDocs 配置
 
 网站正文放在 `docs/` 中，`mkdocs.yml` 负责站点名称、地址、主题和导航顺序。`nav` 中的路径相对于 `docs/`，所以写 `index.md`，而不是 `docs/index.md`。`site/` 是构建时生成的目录，已经加入 `.gitignore`，不会提交到 `main`。
 
-[!\[项目结构与 MkDocs 配置](img/2.png)](img/2.png)
+[![项目结构与 MkDocs 配置](img/2.png)](img/2.png)
 
 ### 2.3 本地构建与预览
 
 我使用 Python 3.12 创建虚拟环境，安装 `requirements.txt` 中的依赖后执行 `python -m mkdocs build --strict`。构建通过后又检查了四页导航、表格、代码块和页面间链接。
 
-[!\[本地严格构建成功](img/3.png)](img/3.png)
+[![本地严格构建成功](img/3.png)](img/3.png)
 
 ### 2.4 Pages 发布设置
 
 我在仓库 `Settings → Pages` 中把发布来源设为 GitHub Actions。这个项目使用官方 Pages 工作流直接上传和部署 `site/`，没有建立 `gh-pages` 分支，也没有填写个人访问令牌。
 
-[!\[Pages 使用 GitHub Actions](img/4.png)](img/4.png)
+[![Pages 使用 GitHub Actions](img/4.png)](img/4.png)
 
 ### 2.5 Actions 首次构建和部署
 
 首次推送相关文件后，`Deploy MkDocs to GitHub Pages` 自动运行。`build` 任务负责取出源码、准备 Python、安装依赖、构建网站并上传产物；它成功以后，`deploy` 任务才会把产物发布到 Pages。
 
-[!\[首次构建和部署成功](img/5.png)](img/5.png)
+[![首次构建和部署成功](img/5.png)](img/5.png)
 
 ### 2.6 网站访问与四页导航检查
 
 部署完成后，我通过公开地址访问网站，并依次打开首页、关于、使用指南和 API 参考。四页导航均可点击，表格和代码块显示正常，仓库链接也能返回源码页面。
 
-[!\[公开网站效果](img/6.png)](img/6.png)
+[![公开网站效果](img/6.png)](img/6.png)
 
 ### 2.7 第二次推送与自动更新验证
 
@@ -52,9 +52,9 @@
 * 对应提交链接：[https://github.com/R4NZH0U/my-docs/commit/a6a64aec51f3b7dd8c07b736eb4361474d1f8659](https://github.com/sophiasu051119-glitch/my-docs/commit/3e310da610e644a34139f66a2b9bc9bad893d52f)
 * 对应 Actions 运行链接：[https://github.com/R4NZH0U/my-docs/actions/runs/43836440349](https://github.com/sophiasu051119-glitch/my-docs/actions/runs/41417913487)
 
-[!\[第二次推送触发成功运行](img/7.png)](img/7.png)
+[![第二次推送触发成功运行](img/7.png)](img/7.png)
 
-[!\[第二次推送后的网页内容](img/8.png)](img/8.png)
+[![第二次推送后的网页内容](img/8.png)](img/8.png)
 
 ## 3\. 问题与解决
 
